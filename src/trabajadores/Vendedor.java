@@ -3,7 +3,7 @@ package trabajadores;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vendedor {
+public class Vendedor extends Gestor{
    private String nombre;
    private int salariobase;
     double salario;
@@ -19,19 +19,19 @@ public class Vendedor {
         this.salariobase=salariobase;
 
     }
-    public String getNombre(){
+    public String getNombreVendedor(){
         return nombre;
     }
 
-    public void setNombre(String nombre){
+    public void setNombreVendedor(String nombre){
         this.nombre=nombre;
 
     }
-    public int getSalariobase(){
+    public int getSalariobaseVendedor(){
         return salariobase;
     }
 
-    public void setSalariobase(int salariobase) {
+    public void setSalariobaseVendedor(int salariobase) {
         this.salariobase = salariobase;
     }
 
