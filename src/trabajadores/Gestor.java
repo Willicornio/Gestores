@@ -78,9 +78,6 @@ public void ponventas(int venta, String nombrevendedor){
 
 
 
-
-
-
     public double damesalario2(){
         int t= ListaVendedores.size();
         for (int j=0; j<t; j++){

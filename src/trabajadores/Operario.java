@@ -21,6 +21,7 @@ public class Operario extends Gestor {
         this.nombre = nombre;
     }
 
+
     public int getSalario() {
         return salario;
 
