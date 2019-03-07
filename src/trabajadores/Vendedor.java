@@ -66,8 +66,9 @@ public class Vendedor extends Empleado {
     double setSalario(double salario) {
 
         double ingresosventas = 0;
+        int n = listaVentas.size() - 1;
 
-        for (int i = 0; i < listaVentas.size(); i++) {
+        for (int i = n; i < listaVentas.size(); i++) {
 
             ingresosventas += listaVentas.get(i).ingreso;
         }

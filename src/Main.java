@@ -16,6 +16,8 @@ public class Main {
 
     SuperGestor.añadeEmpleado("adria","navarrete","vendedor","1",1000);
     SuperGestor.nuevaVenta("adrianavarrete_1",200);
+    SuperGestor.nuevaVenta("adrianavarrete_1",200);
+    SuperGestor.nuevaVenta("adrianavarrete_1",200);
 
     System.out.println(SuperGestor.dameSalario("adrianavarrete_1"));
 

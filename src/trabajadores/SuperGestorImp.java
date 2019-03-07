@@ -69,16 +69,6 @@ public class SuperGestorImp implements SuperGestor {
 
     }
 
-    public double tamañoLista (Vendedor v){
-
-        double n = 0;
-        for (int i = 0; i < v.listaVentas.size() ; i++) {
-            n += 1;
-        }
-        return n;
-
-    }
-
-
+    
 
 }
