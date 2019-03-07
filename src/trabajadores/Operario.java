@@ -1,36 +1,26 @@
 package trabajadores;
 
-public class Operario extends Gestor {
-    String nombre;
-    int salario;
+public class Operario extends Empleado {
 
-    public Operario() {
-    }
 
-    public Operario(String nombre, int salario) {
+
+    public Operario(String id, String nombre, String apellido, double salario) {
+
         this.nombre = nombre;
-        this.salario = salario;
+        this.salario = setSalario(salario);
+        this.apellido = apellido;
+
+        this.id = nombre + apellido + "_" + id;
     }
 
-    public String getNombreO() {
-        return nombre;
 
-    }
-
-    public void setNombreO(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getSalario() {
-        return salario;
-
-    }
-
-    public void setSalario(int salario) {
-        this.salario = salario;
+    public double setSalario(double salario) {
+        return  salario;
 
     }
 
 
-    }
+
+
+}
 

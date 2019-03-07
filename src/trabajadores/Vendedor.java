@@ -3,22 +3,33 @@ package trabajadores;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vendedor extends Gestor{
-   private String nombre;
-   private int salariobase;
-    double salario;
-    List<Integer> ventasList = new ArrayList<Integer>();
-    int venta;
-    int i = 0;
+public class Vendedor extends Empleado {
 
-    public Vendedor(){
+    int idventas = 0;
+    List<Venta> listaVentas;
+
+
+    public Vendedor(String id, String nombre, String apellido, double salario) {
+
+        this.listaVentas = new ArrayList<>();
+        this.nombre = nombre;
+        this.salario = salario;
+        this.apellido = apellido;
+
+        this.id = nombre + apellido + "_" + id;
+
+
     }
 
-    public Vendedor(String nombre, int salariobase){
-        this.nombre=nombre;
-        this.salariobase=salariobase;
+    public void añadirVenta(Venta v) {
+
+        this.listaVentas.add(idventas, v);
+        idventas++;
+
 
     }
+
+    /*
     public String getNombreVendedor(){
         return nombre;
     }
@@ -50,4 +61,30 @@ public class Vendedor extends Gestor{
         salario= salariobase+salariobase;
         return salario;
     }
+*/
+    @Override
+    double setSalario(double salario) {
+
+        double ingresosventas = 0;
+
+        for (int i = 0; i < listaVentas.size(); i++) {
+
+            ingresosventas += listaVentas.get(i).ingreso;
+        }
+
+
+        return salario +(ingresosventas);
+}
+
+
+
+
+
+    private double suma(Venta venta){
+
+        double res = 0;
+        return res = res + venta.ingreso;
+    }
+
+
 }

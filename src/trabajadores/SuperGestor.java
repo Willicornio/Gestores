@@ -2,7 +2,9 @@ package trabajadores;
 
 public interface SuperGestor {
 
-    public String getNombre();
-    public void setNombre(String nombre);
+        void añadeEmpleado(String nombre, String apellido, String tipo, String id, double salario);
+        void nuevaVenta(String idvendedor, double ingreso);
+
+
 
 }

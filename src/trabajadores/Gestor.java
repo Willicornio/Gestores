@@ -3,21 +3,23 @@ package trabajadores;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Gestor implements  SuperGestor{
-   private String nombre;
-    private int salariobase;
+public class Gestor extends Empleado{
+
     int i=0;
     int j=0;
-    double salario;
-    public Gestor() {
 
-    }
+    public Gestor(String id, String nombre, String apellido, double salario) {
 
-    public Gestor(String nombre, int salariobase) {
         this.nombre = nombre;
-        this.salariobase = salariobase;
+        this.salario = salario;
+        this.apellido = apellido;
+
+        this.id = nombre + apellido + "_" + id;
+
     }
 
+
+/*
     public String getNombre(){
         return nombre;
     }
@@ -91,4 +93,10 @@ public void ponventas(int venta, String nombrevendedor){
         return salario;
     }
 
-     }
+*/
+
+    @Override
+    double setSalario(double salario) {
+        return 0;
+    }
+}
