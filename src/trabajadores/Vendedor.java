@@ -3,51 +3,59 @@ package trabajadores;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vendedor extends Gestor{
-   private String nombre;
-   private int salariobase;
-    double salario;
-    List<Integer> ventasList = new ArrayList<Integer>();
-    int venta;
-    int i = 0;
+public class Vendedor extends Empleado {
 
-    public Vendedor(){
+    int idventas = 0;
+    List<Venta> listaVentas;
+
+
+    public Vendedor(String id, String nombre, String apellido, double salario) {
+
+        this.listaVentas = new ArrayList<>();
+        this.nombre = nombre;
+        this.salario = salario;
+        this.apellido = apellido;
+
+        this.id = nombre + apellido + "_" + id;
+
+
     }
 
-    public Vendedor(String nombre, int salariobase){
-        this.nombre=nombre;
-        this.salariobase=salariobase;
+    public void añadirVenta(Venta v) {
+
+        this.listaVentas.add(idventas, v);
+        idventas++;
+
 
     }
-    public String getNombreVendedor(){
-        return nombre;
-    }
 
-    public void setNombreVendedor(String nombre){
-        this.nombre=nombre;
+    @Override
+    double setSalario(double salario) {
 
-    }
-    public int getSalariobaseVendedor(){
-        return salariobase;
-    }
+        double ingresosventas = 0;
+        int n = listaVentas.size() - 1;
 
-    public void setSalariobaseVendedor(int salariobase) {
-        this.salariobase = salariobase;
-    }
+        for (int i = n; i < listaVentas.size(); i++) {
 
-    public void AñadirVenta(int venta) {
-        ventasList.add(i, venta);
-        i=i+1;
-    }
-    public double DameSalario(){
-
-        int t= ventasList.size();
-        for (int j=0; j<t; j++){
-            salario= (ventasList.get(j))+salario;
-
-
+            ingresosventas += listaVentas.get(i).ingreso;
         }
-        salario= salariobase+salariobase;
-        return salario;
+
+
+        salario = salario +(ingresosventas);
+        return  salario;
+}
+
+double getSalario (){
+        return this.salario;
+}
+
+
+
+    private double suma(Venta venta){
+
+        double res = 0;
+        return res = res + venta.ingreso;
     }
+
+
 }
