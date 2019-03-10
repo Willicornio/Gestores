@@ -6,9 +6,12 @@ import java.util.List;
 
 public class Gestor extends Empleado {
 
+
+
+
     int i = 0;
     int j = 0;
-    public List<Subordinado> listaSubordinados;
+    List<Subordinado> listaSubordinados;
     int numeroSub=0;
 
     public Gestor(String id, String nombre, String apellido, double salario) {
@@ -21,38 +24,45 @@ public class Gestor extends Empleado {
         this.id = nombre + apellido + "_" + id;
 
     }
-    public double setSalario(double salario){
-        return salario;
-    }
-    @Override
-    /* double setSalario(double salario) {
+
+   public double setSalario(double salario, SuperGestorImp instancia) { /** La instacia es porqué si no no sé como hacer que desde esta clase llame a "Buscador", que es una función de la clase SuperGestorImp.*/
 
         double ingresossubordinados = 0;
         int n = listaSubordinados.size();
         String idsub = null;
+        double dinero =0 ;
+
 
         for (int i = 0; i < n; i++) {
 
             listaSubordinados.get(i).idsubordinado = idsub;
 
-
-
-
+            Empleado a = instancia.Buscador(idsub);
+            dinero = a.getSalario(); /**No sabe hacer esto, y no sé muy bien porqué */
+            this.salario = dinero + salario;
+            dinero = 0;
         }
-
-
-        salario = salario +(ingresosventas);
-        return 0;
+        return this.salario;
     }
-*/
+public double setSalario2 (double salario){
+
+        this.salario = salario;
+        return salario;
+}
+
+
+
+
     double getSalario() {
+        this.salario = salario;
         return this.salario;
     }
 
     public void añadirSubordinado(Subordinado sub) {
 
-        this.listaSubordinados.add(numeroSub,sub);
-        numeroSub = numeroSub +1;
+        this.listaSubordinados.add(sub);
+        switch (numeroSub = numeroSub + 1) {
+        }
 
     }
 }

@@ -1,6 +1,7 @@
 package trabajadores;
 
 public class Subordinado {
+
     String idgestor;
     String idsubordinado;
 

@@ -8,6 +8,7 @@ public class SuperGestorImp implements SuperGestor {
 
     int numempleado = 0;
     public HashMap<String, Empleado> empleados;
+    private Object Empleado;
 
     public SuperGestorImp() {
 
@@ -42,6 +43,26 @@ public class SuperGestorImp implements SuperGestor {
     }
 
 
+
+    public Empleado Buscador (String idsub) {
+        Empleado a = (Empleado) this.empleados.get(idsub);
+        return a;
+    }
+/**
+        int n = empleados.size();
+        int i = 0;
+        for (int j = 0; j < n; j++) {
+            if (empleados.get(i).id == idsub) {
+                Empleado a = (Empleado) this.empleados.get(i);
+                return a;
+            } else return null;
+        }
+        return null;
+
+
+ */
+
+
     @Override
     public void nuevaVenta(String idvendedor, double ingreso) {
 
@@ -61,8 +82,9 @@ public class SuperGestorImp implements SuperGestor {
         Gestor g = (Gestor) this.empleados.get(idgestor);
         Subordinado sub = new Subordinado(idgestor,idsubordinado);
         g.añadirSubordinado(sub);
+        SuperGestorImp instancia = new SuperGestorImp();
 
-        double newsalario = g.setSalario(g.salario);
+        double newsalario = g.setSalario(g.salario , instancia);
         g.salario = newsalario;
 
         this.empleados.put(idgestor,g);

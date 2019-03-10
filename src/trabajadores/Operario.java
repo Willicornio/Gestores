@@ -9,12 +9,14 @@ public class Operario extends Empleado {
         this.nombre = nombre;
         this.salario = setSalario(salario);
         this.apellido = apellido;
+        this.salario = salario;
 
         this.id = nombre + apellido + "_" + id;
     }
 
     public double getSalario() {
-        return salario;
+
+        return this.salario;
     }
     public double setSalario(double salario) {
         return  salario;

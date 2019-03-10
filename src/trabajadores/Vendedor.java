@@ -29,7 +29,7 @@ public class Vendedor extends Empleado {
 
     }
 
-    @Override
+
     double setSalario(double salario) {
 
         double ingresosventas = 0;
@@ -46,6 +46,7 @@ public class Vendedor extends Empleado {
 }
 
 double getSalario (){
+        this.salario = salario;
         return this.salario;
 }
 

@@ -15,11 +15,19 @@ public class Main {
     SuperGestorImp SuperGestor = new SuperGestorImp();
 
     SuperGestor.añadeEmpleado("adria","navarrete","vendedor","1",1000);
+    SuperGestor.añadeEmpleado("manuel","manuel","operario", "1", 500);
     SuperGestor.nuevaVenta("adrianavarrete_1",200);
     SuperGestor.nuevaVenta("adrianavarrete_1",200);
     SuperGestor.nuevaVenta("adrianavarrete_1",200);
+    SuperGestor.añadeEmpleado("guillermo","manterola", "gestor", "jefe", 100);
 
-    System.out.println(SuperGestor.dameSalario("adrianavarrete_1"));
+
+    SuperGestor.nuevoSubordinado("guillermomanterola_jefe","manuelmanuel_1");
+
+
+
+
+    System.out.println(SuperGestor.dameSalario("jefe"));
 
 
     }
